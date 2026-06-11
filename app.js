@@ -1,6 +1,13 @@
 const WHATSAPP_NUMBER = "918328129450";
 
 document.addEventListener("DOMContentLoaded", () => {
+  // --- Restrict Date Picker to Future Dates ---
+  const dateInput = document.getElementById("date");
+  if (dateInput) {
+    const today = new Date().toISOString().split("T")[0];
+    dateInput.setAttribute("min", today);
+  }
+
   // --- Mobile Menu Toggle ---
   const toggleBtn = document.getElementById("mobile-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
